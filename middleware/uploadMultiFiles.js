@@ -32,7 +32,7 @@ const storage = multer.diskStorage({
     cb(null, folderPath);
   },
   filename: (req, file, cb) => {
-    const villageName = req.headers["village_name"] || "default_village";
+    const villageName = req.params.village_name || "default_name";
     const timestamp = new Date().getTime();
     const fileExtension = path.extname(file.originalname);
     const newFileName = `${villageName}_${timestamp}${fileExtension}`;

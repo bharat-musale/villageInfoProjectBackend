@@ -22,7 +22,7 @@ router.post(
   upload.fields([{ name: "image1" }, { name: "image2" }]),
   addVillage
 );
-router.post("/edit/:id", authMiddleware, uploadMultiFiles, editVillage);
+router.post("/edit/:id/:village_name", authMiddleware, uploadMultiFiles, editVillage);
 router.get("/all",  getAllVillages);
 router.get("/:candidate_id", getVillageByCandidate_id);
 router.get("/:village_id", authMiddleware, getVillageByVillage_id);
